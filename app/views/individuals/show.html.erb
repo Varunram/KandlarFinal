@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @individual.price %>
+</p>
+
+<p>
+  <strong>Closesin:</strong>
+  <%= @individual.closesin %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @individual.description %>
+</p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @individual.uid %>
+</p>
+
+<%= link_to 'Edit', edit_individual_path(@individual) %> |
+<%= link_to 'Back', individuals_path %>

@@ -1,0 +1,48 @@
+<% @title = %[Kandlar | Fittings] %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+<br> <h1 style ="font-family: sans-serif; letter-spacing: -2.5px; font: 'Droid-Sans'; color: #093775">Available &nbsp;Fittings</h1><br><br>
+
+<table class="table table-hover table-bordered">
+  <thead class="table-inverse">
+    <tr>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Sl.No</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Codeno</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Type</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Materialgrade</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Itemdescription</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Size</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Sch</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; " ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Lr</th>
+      <th style="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fittings.each do |fitting| %>
+      <tr class="table-info">
+        <td><%= fitting.id %></td>
+        <td><%= fitting.codeno %></td>
+        <td><%= fitting.typec %></td>
+        <td><%= fitting.materialgrade %></td>
+        <td><%= fitting.itemdescription %></td>
+        <td><%= fitting.size %></td>
+        <td><%= fitting.sch %></td>
+        <td><%= fitting.lr %></td>
+        <td><%= fitting.quantity %></td>
+        <td><%= link_to 'Show', fitting %></td>
+        <% if current_user.admin? %>
+
+        <td><%= link_to 'Edit', edit_fitting_path(fitting) %></td>
+        <td><%= link_to 'Destroy', fitting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fitting', new_fitting_path %>

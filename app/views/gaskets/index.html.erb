@@ -1,0 +1,46 @@
+<% @title = %[Kandlar | Gaskets] %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+<br> <h1 style ="font-family: sans-serif; letter-spacing: -2.5px; font: 'Droid-Sans'; color: #093775">Available &nbsp;Gaskets</h1><br><br>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-inverse">
+    <tr>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Sl.No</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Codeno</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Type</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Material</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Nb</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Thk</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Class</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gaskets.each do |gasket| %>
+      <tr class="table-info">
+        <td><%= gasket.id %></td>
+        <td><%= gasket.codeno %></td>
+        <td><%= gasket.typec %></td>
+        <td><%= gasket.material %></td>
+        <td><%= gasket.nb %></td>
+        <td><%= gasket.thk %></td>
+        <td><%= gasket.class %></td>
+        <td><%= gasket.quantity %></td>
+        <td><%= link_to 'Show', gasket %></td>
+        <% if current_user.admin? %>
+
+        <td><%= link_to 'Edit', edit_gasket_path(gasket) %></td>
+        <td><%= link_to 'Destroy', gasket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gasket', new_gasket_path %>

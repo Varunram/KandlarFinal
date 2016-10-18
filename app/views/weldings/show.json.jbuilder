@@ -1,0 +1,1 @@
+json.partial! "weldings/welding", welding: @welding

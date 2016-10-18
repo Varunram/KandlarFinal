@@ -1,0 +1,1 @@
+json.array! @gaskets, partial: 'gaskets/gasket', as: :gasket

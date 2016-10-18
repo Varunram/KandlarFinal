@@ -1,0 +1,33 @@
+<%= form_for(@bearing) do |f| %>
+  <% if @bearing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bearing.errors.count, "error") %> prohibited this bearing from being saved:</h2>
+
+      <ul>
+      <% @bearing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :itemid %><br>
+    <%= f.text_field :typec %>
+  </div>
+  <div class="field">
+    <%= f.label :materialdescription %><br>
+    <%= f.text_field :materialdescription %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<% if current_user.admin? %>
+<br>
+
+<h1>New rod</h1>
+
+<%= render 'form' %>
+<%else%>
+<br>
+<h1> You are not Authorised to view this page </h1>
+<%end%>
+
+<%= link_to 'Back', bearings_path %>

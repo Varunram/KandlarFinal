@@ -1,0 +1,1 @@
+json.partial! "bearings/bearing", bearing: @bearing

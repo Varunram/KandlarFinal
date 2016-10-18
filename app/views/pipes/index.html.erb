@@ -1,0 +1,50 @@
+<% @title = %[Kandlar | Pipes] %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+<br> <h1 style ="font-family: sans-serif; letter-spacing: -2.5px; font: 'Droid-Sans'; color: #093775;">Available &nbsp;Pipes</h1><br><br>
+
+<table class="table table-hover table-bordered">
+  <thead class="table-inverse">
+    <tr>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Sl.No</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Codeno</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Description</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Type</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Materialgrade</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Inch</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Od</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Tk</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Lg</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pipes.each do |pipe| %>
+      <tr class="class-info">
+        <td><%= pipe.id %></td>
+        <td><%= pipe.codeno %></td>
+        <td><%= pipe.description %></td>
+        <td><%= pipe.typec %></td>
+        <td><%= pipe.materialgrade %></td>
+        <td><%= pipe.inch %></td>
+        <td><%= pipe.od %></td>
+        <td><%= pipe.tk %></td>
+        <td><%= pipe.lg %></td>
+        <td><%= pipe.quantity %></td>
+        <td><%= link_to 'Show', pipe %></td>
+        <% if current_user.admin? %>
+
+        <td><%= link_to 'Edit', edit_pipe_path(pipe) %></td>
+        <td><%= link_to 'Destroy', pipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pipe', new_pipe_path %>

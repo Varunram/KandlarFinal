@@ -1,0 +1,56 @@
+<%= form_for(@rod) do |f| %>
+  <% if @rod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rod.errors.count, "error") %> prohibited this rod from being saved:</h2>
+
+      <ul>
+      <% @rod.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :SellerId %><br>
+    <%= f.number_field :slno %><br>
+  </div>
+  <div class="field">
+    <%= f.label :Itemid %><br>
+    <%= f.text_field :typec %><br>
+  </div>
+  <div class="field">
+    <%= f.label :material %><br>
+    <%= f.text_field :material %><br>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %><br>
+  </div>
+  <div class="field">
+    <%= f.label :tk %><br>
+    <%= f.text_field :tk %><br>
+  </div>
+  <div class="field">
+    <%= f.label :dia %><br>
+    <%= f.text_field :dia %><br>
+  </div>
+  <div class="field">
+    <%= f.label :lg %><br>
+    <%= f.text_field :lg %><br>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %><br>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %><br>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %><br>
+  </div>
+<% end %>

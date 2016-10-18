@@ -1,0 +1,52 @@
+<main role="main">
+	<div class="center">
+		<div class="content-block">
+			<div class="auction-block">
+				<h1>Computer, Equipment & Software AUCTIONS</h1>
+
+
+
+				<div class="sortWrap clear">
+					<div class="auctionCount">
+						5 Listings
+					</div>
+
+				</div>
+
+				<% @individuals.each do |individual| %>
+				<!-- listing -->
+				<div class="box-holder">
+					<a class="box" href="" title="Microsoft Surface RT, 32GB - 25 Units - Grade B - Louisville, KY" class="marketplaceLogo" target="_blank">
+						<div class="category-block">
+							<!-- logo image --><img src="" alt= "<%= individual.uid.upcase %>" /></div>
+						<div class="img-holder">
+							<!-- auction image -->
+							<img src="http://kandlar.com/demo/images/logo.png" alt="Gazelle">
+						</div>
+						<div class="lot-info">
+							<p><%= individual.description %></p><br>
+							<span class="time-left">Price: <strong><%= individual.price %></strong></span>
+							<span class="time-left">Closes in <strong><%= individual.closesin %></strong></span>
+						</div>
+					</a>
+				</div>
+				<%end%>
+			</div>
+		</div>
+	</div>
+</main>
+
+<a href="#" class="scroll-to-top">Top</a>
+
+</div>
+
+
+<div id="su-footer-links" style="text-align: center;"></div>
+<script type='text/javascript' src='http://sourcing.bstock.com/wp-content/themes/bstock/js/jquery.main.js'></script>
+<script type='text/javascript' defer="defer" src='//info.bstock.com/js/public/jquery.cookie.js'></script>
+<script type='text/javascript' defer="defer" src='//info.bstock.com/js/public/jQueryString-2.0.2-Min.js'></script>
+<script type='text/javascript' defer="defer" src='//info.bstock.com/rs/233-KML-790/images/Get_UTM_Parameters_Web.js'></script>
+
+</body>
+<%= link_to 'New Individual', new_individual_path %>
+</html>

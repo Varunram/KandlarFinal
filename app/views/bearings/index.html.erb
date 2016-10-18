@@ -1,0 +1,43 @@
+<% @title = %[Kandlar | Bearings] %>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha/css/bootstrap.min.css">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script></head>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+<br> <h1 style ="font-family: sans-serif; letter-spacing: -2.5px; font: 'Droid-Sans'; color: #093775;">Available &nbsp;Bearings</h1><br><br>
+
+<table class="table table-bordered table-hover">
+  <thead class="table-inverse">
+    <tr>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Sl.No</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Codeno</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Type</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Material Description</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Size</th>
+      <th style ="font-family: sans-serif; font-weight: lighter; font: 'Droid-Sans'; color: #ffffff; ">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bearings.each do |bearing| %>
+      <tr class="table-info">
+        <td><%= bearing.id %></td>
+        <td><%= bearing.codeno %></td>
+        <td><%= bearing.typec %></td>
+        <td><%= bearing.materialdescription %></td>
+        <td><%= bearing.size %></td>
+        <td><%= bearing.quantity %></td>
+        <td><%= link_to 'Show', bearing %></td>
+        <% if current_user.admin? %>
+
+        <td><%= link_to 'Edit', edit_bearing_path(bearing) %></td>
+        <td><%= link_to 'Destroy', bearing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bearing', new_bearing_path %>

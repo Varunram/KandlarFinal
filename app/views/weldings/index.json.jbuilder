@@ -1,0 +1,1 @@
+json.array! @weldings, partial: 'weldings/welding', as: :welding

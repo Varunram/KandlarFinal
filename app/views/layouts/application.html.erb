@@ -1,0 +1,254 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+		<script type="text/javascript">
+			var pathInfo = {
+				base: 'http://bstock.com/wp-content/themes/bstock/',
+				css: 'css/',
+				js: 'js/',
+				swf: 'swf/'
+			}
+		</script>
+
+		<title><%= @title %>
+		</title>
+		<link rel='dns-prefetch' href='//fonts.googleapis.com'/>
+		<link rel='dns-prefetch' href='//s.w.org'/>
+		<link rel="alternate" type="application/rss+xml" title="B-Stock Solutions &raquo; Feed" href="http://bstock.com/feed/"/>
+		<link rel="alternate" type="application/rss+xml" title="B-Stock Solutions &raquo; Comments Feed" href="http://bstock.com/comments/feed/"/>
+		<link rel='stylesheet' id='gtranslate-style-css' href='http://bstock.com/wp-content/plugins/gtranslate/gtranslate-style16.css' type='text/css' media='all'/>
+		<link rel='stylesheet' id='base-fonts-css' href='//fonts.googleapis.com/css?family=Droid+Sans%3A400%2C700' type='text/css' media='all'/>
+		<link rel='stylesheet' id='base-style-css' href='http://bstock.com/wp-content/themes/bstock/style.css' type='text/css' media='all'/>
+		<script src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"   integrity="sha256-JklDYODbg0X+8sPiKkcFURb5z7RvlNMIaE3RA2z97vw="   crossorigin="anonymous"></script>
+		<link rel='https://api.w.org/' href='http://bstock.com/wp-json/'/>
+		<link rel="alternate" type="application/json+oembed" href="http://bstock.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fbstock.com%2F"/>
+		<link rel="alternate" type="text/xml+oembed" href="http://bstock.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fbstock.com%2F&#038;format=xml"/>
+		<div id="wrapper">
+			<header id="header">
+				<div class="header-holder">
+
+					<div class="center">
+							<div class="logo">
+								<p style= "color: #051F4A;position: absolute; font-size: 45px;font-family: "Helvetica", sans-serif; font-size: 300%; padding: 0px; "><strong>KANDLAR</strong></p>
+							</div>
+							<div class="right mobile-show">
+								<a href="#" class="nav-opener">
+									<span>Menu</span>
+								</a>
+							</div>
+
+						<div class="nav-block">
+							<div class="nav-inner">
+								<div id="nav-wrap" >
+									<nav id="nav" class="menu-primary-navigation-container">
+										<ul>
+											<li id="menu-item-914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-914">
+												<a target="_blank" href=" <%= root_url %>">Home</a>
+											</li>
+
+											<li id="menu-item-914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-914">
+												<a target="_blank" href="/home/index">BUY</a>
+												<ul class="sub-menu">
+													<li id="menu-item-803" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-803">
+														<a target="_blank" href="">Products</a>
+													</li>
+													<li id="menu-item-712" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-712">
+														<a href="">Auctions</a>
+													</li>
+
+												</ul>
+											</li>
+											<li id="menu-item-400" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-400">
+												<a href="">SELL</a>
+												<ul class="sub-menu">
+													<li id="menu-item-359" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-359">
+														<a href="">Auctions</a>
+													</li>
+													<li id="menu-item-360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-360">
+														<a href="">Products</a>
+													</li>
+												</ul>
+											</li>
+
+											<li id="menu-item-914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-914">
+												<a target="_blank" href="/about/index">About Us</a>
+											</li>
+											<% if user_signed_in? %>
+											<li id="menu-item-914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-914">
+												<a target="_blank" href="/users/edit">Account</a>
+											</li>
+
+											<%else%>
+											<li id="menu-item-914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-914">
+												<a target="_blank" href="/users/sign_in">Sign In</a>
+											</li>
+											<li id="menu-item-914" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-914">
+												<a target="_blank" href="/users/sign_up">Sign Up</a>
+											</li>
+											<%end%>
+
+										</ul>
+									</nav>
+									<form method="post" action="mailto:buy@kandlar.com">
+										<input  style="float: right; position :absolute; margin-left: 5px; margin-top: 6px;" type="submit" value="Contact Us"/>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+		</head>
+		<body>
+			<%= yield %>
+		</body>
+		<footer id="footer">
+			<div class="center">
+				<div class="list-block">
+					<div class="list-holder">
+						<div class="holder">
+							<h2 style="color: #000C49;">BUY</h2>
+							<ul>
+								<li id="menu-item-2985" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2985">
+									<a href="">Products</a>
+								</li>
+								<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82">
+									<a href="">Auctions</a>
+								</li>
+							</ul>
+						</div>
+						<div class="holder">
+							<h2 style="color: #000C49;">SELL</h2>
+							<ul>
+								<li id="menu-item-365" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-365">
+									<a href="">Products</a>
+								</li>
+								<li id="menu-item-366" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-366">
+									<a href="">Auctions</a>
+								</li>
+							</ul>
+						</div>
+						<div class="holder">
+							<h2 style="color: #000C49;">ABOUT</h2>
+							<ul>
+								<li id="menu-item-367" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-367">
+									<a href="http://kandlar.com/demo/aboutus.html">Company</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<div class="contact-block">
+						<h2 style="color: #000C49;">Contact us</h2>
+						<span class="title">Call us at</span>
+						<a href="tel:+914447100603" class="tel-link" style="color: #000C49;">044-47100603</a>
+					</div>
+					<div class="contact-block" style ="position: relative; float: right; margin-bottom: 5px;">
+						<div class="widget GTranslate_widget2" id="gtranslate">
+							<h2 style="color: #000C49;">Translate</h2>
+							<!-- GTranslate: https://gtranslate.io/ -->
+							<select onchange="doGTranslate(this);">
+								<option value="">Select Language</option>
+								<option value="en|en">English</option>
+								<option value="en|ta">Tamil</option>
+								<option value="en|ka">Kannada</option>
+								<option value="en|te">Telugu</option>
+								<option value="en|ml">Malayalam</option>
+								<option value="en|hi">Hindi</option>
+								<option value="en|pa">Punjabi</option>
+								<option value="en|ur">Urdu</option>
+							</select>
+							<style type="text/css">
+								<!-- #goog-gt-tt {
+							display: none !important;
+						}
+
+						.goog-te-banner-frame {
+							display: none !important;
+						}
+
+						.goog-te-menu-value:hover {
+							text-decoration: none !important;
+						}
+
+						body {
+							top: 0 !important;
+						}
+
+						#google_translate_element2 {
+							display: none!important;
+						}
+
+						-->
+							</style>
+
+							<div id="google_translate_element2"></div>
+							<script type="text/javascript">
+								function googleTranslateElementInit2() {
+									new google.translate.TranslateElement({
+										pageLanguage: 'en',
+										autoDisplay: false
+									}, 'google_translate_element2');
+								}
+							</script>
+							<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
+							<script type="text/javascript">
+								function GTranslateFireEvent(element, event) {
+									try {
+										if (document.createEventObject) {
+											var evt = document.createEventObject();
+											element.fireEvent('on' + event, evt)
+										} else {
+											var evt = document.createEvent('HTMLEvents');
+											evt.initEvent(event, true, true);
+											element.dispatchEvent(evt)
+										}
+									} catch (e) {}
+								}
+
+								function doGTranslate(lang_pair) {
+									if (lang_pair.value)
+										lang_pair = lang_pair.value;
+									if (lang_pair == '')
+										return;
+									var lang = lang_pair.split('|')[1];
+									var teCombo;
+									var sel = document.getElementsByTagName('select');
+									for (var i = 0; i < sel.length; i++)
+										if (sel[i].className == 'goog-te-combo')
+											teCombo = sel[i];
+								if (document.getElementById('google_translate_element2') == null || document.getElementById('google_translate_element2').innerHTML.length == 0 || teCombo.length == 0 || teCombo.innerHTML.length == 0) {
+										setTimeout(function () {
+											doGTranslate(lang_pair)
+										}, 500)
+									} else {
+										teCombo.value = lang;
+										GTranslateFireEvent(teCombo, 'change');
+										GTranslateFireEvent(teCombo, 'change')
+									}
+								}
+							</script>
+						</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="logo-block">
+						<div class="logo">
+							<a href="http://www.kandlar.com"><img src="http://kandlar.com/demo/images/logo.png"></a>
+						</div>
+						<span class="copyright" style="color: #000C49; text-align: center;">Made With &#9825; by Delta Force
+						</span><br><br>
+						<span class="copyright" style="color: #000C49;">&copy; Kandlar 2016
+						</span>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+	</html>
